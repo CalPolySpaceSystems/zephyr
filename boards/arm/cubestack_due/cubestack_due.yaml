@@ -1,0 +1,9 @@
+identifier: cubestack_due
+name: Cubestack Due
+type: mcu
+arch: arm
+ram: 96
+flash: 512
+toolchain:
+  - zephyr
+  - gccarmemb
