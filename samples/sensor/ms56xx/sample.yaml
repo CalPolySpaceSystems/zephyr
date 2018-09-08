@@ -1,0 +1,8 @@
+sample:
+  description: MS56XX sensor sample
+  name: MS56XX sample
+tests:
+  test:
+    build_only: true
+    depends_on: i2c
+    tags: samples sensor

@@ -1,0 +1,37 @@
+# Kconfig - MS56XX Temperature Compensating Barometer
+
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+menuconfig MS56XX
+	bool "MS56XX Barometer"
+	depends on I2C
+	help
+	  Enable driver for MS56XX Barometer.
+
+if MS56XX
+
+config MS56XX_NAME
+	string "Driver name"
+	default "MS56XX"
+	help
+	  Device name identifying the MS56XX sensor.
+
+config MS56XX_I2C_ADDR
+	hex "I2C address for MS56XX Sensor"
+	default "0x76"
+	range 0x76 0x77
+	help
+	  I2C address of the MS56XX sensor.
+
+	  0x76: CHIP SELECT connected GND
+	  0x77: CHIP SELECT connected VDD
+
+config MS56XX_I2C_MASTER_DEV_NAME
+	string "I2C master where MS56XX is connected"
+	default "I2C_0"
+	help
+	  The I2C master device's name where the MS56XX sensor is connected.
+
+endif #if MS56XX
